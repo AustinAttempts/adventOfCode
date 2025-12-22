@@ -1,6 +1,12 @@
 .{
     .name = .adventOfCode,
     .version = "0.0.1",
+    .dependencies = .{
+        .vaxis = .{
+            .url = "git+https://github.com/rockorager/libvaxis.git#5915f33c1a7a184d3fb2aa39f087c1e6864a4308",
+            .hash = "vaxis-0.5.1-BWNV_GMyCQBtxcEkSAEb_EXbm8A24FWJFC7fXiWUVx9Y",
+        },
+    },
     .minimum_zig_version = "0.15.2",
     .paths = .{""},
     .fingerprint = 0x6d50ed921d8278d,
