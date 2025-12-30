@@ -2,9 +2,9 @@
     .name = .adventOfCode,
     .version = "0.0.1",
     .dependencies = .{
-        .vaxis = .{
-            .url = "git+https://github.com/rockorager/libvaxis.git#5915f33c1a7a184d3fb2aa39f087c1e6864a4308",
-            .hash = "vaxis-0.5.1-BWNV_GMyCQBtxcEkSAEb_EXbm8A24FWJFC7fXiWUVx9Y",
+        .AOC2025 = .{
+            .url = "https://github.com/AustinAttempts/AOC2025/archive/refs/heads/main.tar.gz",
+            .hash = "AOC2025-0.0.0-TqUt-CdUBAAX4kySmcCEH6osV00pEFk--d4QCC9o2nR_",
         },
     },
     .minimum_zig_version = "0.15.2",

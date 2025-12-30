@@ -12,12 +12,11 @@ pub fn build(b: *std.Build) void {
         .optimize = optimize,
     });
 
-    // add vaxis dependency to module
-    const vaxis = b.dependency("vaxis", .{
+    const aoc2025 = b.dependency("AOC2025", .{
         .target = target,
         .optimize = optimize,
     });
-    exe_mod.addImport("vaxis", vaxis.module("vaxis"));
+    exe_mod.addImport("AOC2025", aoc2025.module("AOC2025"));
 
     //create executable
     const exe = b.addExecutable(.{

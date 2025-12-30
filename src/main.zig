@@ -1,36 +1,17 @@
 const std = @import("std");
 const vaxis = @import("vaxis");
+const AOC2025 = @import("AOC2025");
+
 const vxfw = vaxis.vxfw;
-const Model = @import("Model.zig");
-const ContentBox = @import("widgets/ContentBox.zig");
+
+// ANSI color codes
+const CYAN = "\x1b[36m";
+const YELLOW = "\x1b[33m";
+const RESET = "\x1b[0m";
+const BOLD = "\x1b[1m";
 
 pub fn main() !void {
-    var gpa = std.heap.GeneralPurposeAllocator(.{}){};
-    defer _ = gpa.deinit();
-
-    const allocator = gpa.allocator();
-
-    var app = try vxfw.App.init(allocator);
-    defer app.deinit();
-
-    const model = try allocator.create(Model);
-    defer allocator.destroy(model);
-
-    const content_box = try allocator.create(ContentBox);
-    defer allocator.destroy(content_box);
-
-    content_box.* = .{
-        .title = "Title Block",
-        .year_value = "User Input",
-        .day_value = "User Input",
-        .part1_output = "Output Block",
-        .part2_output = "Output Block",
-        .runtime_output = "Output Block",
-    };
-
-    model.* = .{
-        .border = .{ .child = content_box.widget() },
-    };
-
-    try app.run(model.widget(), .{});
+    std.debug.print("\n\n", .{});
+    std.debug.print("\t⭐️🎄 {s}Advent of Code 2025{s} 🎄⭐️\n", .{ BOLD, RESET });
+    try AOC2025.printSolution();
 }
