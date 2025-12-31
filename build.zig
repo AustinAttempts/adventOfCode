@@ -12,6 +12,12 @@ pub fn build(b: *std.Build) void {
         .optimize = optimize,
     });
 
+    const aoc2024 = b.dependency("AOC2024", .{
+        .target = target,
+        .optimize = optimize,
+    });
+    exe_mod.addImport("AOC2024", aoc2024.module("AOC2024"));
+
     const aoc2025 = b.dependency("AOC2025", .{
         .target = target,
         .optimize = optimize,
